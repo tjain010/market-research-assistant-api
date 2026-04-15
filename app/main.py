@@ -2,9 +2,18 @@ from fastapi import FastAPI, HTTPException
 from app.models.schemas import ResearchRequest, ResearchPlanResponse
 from app.services.planner import generate_research_plan
 from app.services.storage import create_report, get_all_reports, get_report_by_id
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Market Research Assistant API")
 
+# security allowing React to make requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def root():

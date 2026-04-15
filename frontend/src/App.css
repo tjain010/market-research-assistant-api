@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f6f8fb;
+  color: #1f2937;
+}
+
+#root {
+  width: 100%;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  margin-bottom: 24px;
+  color: #4b5563;
+}
+
+.topic-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.topic-input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.submit-button {
+  padding: 12px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.error-text {
+  color: #dc2626;
+  margin-bottom: 16px;
+}
+
+.report-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+section {
+  margin-top: 20px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
