@@ -1,3 +1,6 @@
+from app.services.sources import generate_starter_sources
+
+
 def generate_research_plan(topic: str):
     cleaned_topic = topic.strip()
     research_type = classify_topic(cleaned_topic)
@@ -18,7 +21,7 @@ def generate_research_plan(topic: str):
             "Strengths and Weaknesses",
             "Market Implications"
         ]
-        next_step = "Next, retrieve sources for both sides of the comparison."
+        next_step = "Next, review both sides using product, pricing, and documentation sources."
         suggested_sources = [
             "Official product pages",
             "Pricing pages",
@@ -41,7 +44,7 @@ def generate_research_plan(topic: str):
             "Customer Demand",
             "Risks and Opportunities"
         ]
-        next_step = "Next, retrieve market trend and competitor sources."
+        next_step = "Next, review trend, competitor, and market report sources."
         suggested_sources = [
             "Market reports",
             "Industry news",
@@ -64,7 +67,7 @@ def generate_research_plan(topic: str):
             "Target Customers",
             "Risks and Opportunities"
         ]
-        next_step = "Next, retrieve company, competitor, and industry sources."
+        next_step = "Next, review company, competitor, and industry sources."
         suggested_sources = [
             "Official company website",
             "Competitor websites",
@@ -87,13 +90,15 @@ def generate_research_plan(topic: str):
             "Important Trends",
             "Further Questions"
         ]
-        next_step = "Next, retrieve general background and trend sources."
+        next_step = "Next, review general background and trend sources."
         suggested_sources = [
             "Background articles",
             "Industry blogs",
             "Reference pages",
             "News articles"
         ]
+
+    starter_sources = generate_starter_sources(cleaned_topic, research_type)
 
     return {
         "topic": cleaned_topic,
@@ -102,7 +107,8 @@ def generate_research_plan(topic: str):
         "report_outline": report_outline,
         "keywords": keywords,
         "next_step": next_step,
-        "suggested_sources": suggested_sources
+        "suggested_sources": suggested_sources,
+        "starter_sources": starter_sources
     }
 
 
